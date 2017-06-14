@@ -28,7 +28,7 @@
 #define VERSTR(X) STR(X)
 
 #ifndef DEBUG_LINK
-#define DEBUG_LINK 0
+#define DEBUG_LINK 1
 #endif
 
 #ifndef DEBUG_LOG
