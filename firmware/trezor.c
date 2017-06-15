@@ -101,8 +101,8 @@ int main(void)
 
 #if DEBUG_LINK
 	oledSetDebugLink(1);
-	storage_reset(); // wipe storage if debug link
-	storage_reset_uuid();
+	//storage_reset(); // wipe storage if debug link
+	//storage_reset_uuid();
 	storage_commit();
 	storage_clearPinArea(); // reset PIN failures if debug link
 #endif
