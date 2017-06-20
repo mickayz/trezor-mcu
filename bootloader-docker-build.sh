@@ -14,7 +14,8 @@ docker run -t -v $(pwd)/output:/output $IMAGETAG /bin/sh -c "\
 	export OPTFLAGS=-Os
 	make && \
 	make -C bootloader && \
-	cp bootloader/bootloader.bin /output/bootloader-$FIRMWARETAG.bin"
+	cp bootloader/bootloader.bin /output/bootloader-$FIRMWARETAG.bin && \
+    cp bootloader/bootloader.elf /output/bootloader-$FIRMWARETAG.elf"
 
 echo "---------------------"
 echo "Bootloader fingerprint:"

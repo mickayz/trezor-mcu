@@ -129,7 +129,6 @@ clean:
 	rm -f *.a
 	rm -f *.bin
 	rm -f *.d
-	rm -f *.elf
 	rm -f *.hex
 	rm -f *.list
 	rm -f *.log
