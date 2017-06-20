@@ -74,7 +74,8 @@ LDFLAGS  += --static \
             -mthumb \
             -march=armv7 \
             -mfix-cortex-m3-ldrd \
-            -msoft-float
+            -msoft-float \
+            -g
 
 all: $(NAME).bin
 
