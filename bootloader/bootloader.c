@@ -146,6 +146,10 @@ int main(void)
 
 	firmware_present = check_firmware_sanity();
 
+	if (firmware_present){
+		load_app();
+	}
+	/*
 	// at least one button is unpressed
 	uint16_t state = gpio_port_read(BTN_PORT);
 	int unpressed = ((state & BTN_PIN_YES) == BTN_PIN_YES || (state & BTN_PIN_NO) == BTN_PIN_NO);
@@ -165,7 +169,7 @@ int main(void)
 
 		load_app();
 	}
-
+	*/
 	bootloader_loop();
 
 	return 0;
