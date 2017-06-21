@@ -37,7 +37,7 @@ void setup(void)
 	rcc_periph_clock_enable(RCC_SPI1);
 
 	// enable OTG FS clock
-	rcc_periph_clock_enable(RCC_OTGFS);
+	//rcc_periph_clock_enable(RCC_OTGFS);
 
 	// enable RNG
 	//rcc_periph_clock_enable(RCC_RNG);
