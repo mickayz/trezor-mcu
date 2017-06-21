@@ -141,8 +141,8 @@ int main(void)
 {
 	__stack_chk_guard = random32();
 	//setup();
-	//memory_protect();
-	//oledInit();
+	memory_protect();
+	oledInit();
 
 	firmware_present = check_firmware_sanity();
 
