@@ -140,9 +140,9 @@ void __attribute__((noreturn)) __stack_chk_fail(void)
 int main(void)
 {
 	__stack_chk_guard = random32();
-	setup();
-	memory_protect();
-	oledInit();
+	//setup();
+	//memory_protect();
+	//oledInit();
 
 	firmware_present = check_firmware_sanity();
 
