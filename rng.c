@@ -31,8 +31,8 @@ uint32_t random32(void)
 		if (((RNG_SR & (RNG_SR_SEIS | RNG_SR_CEIS)) == 0) && ((RNG_SR & RNG_SR_DRDY) > 0)) {
 			new = RNG_DR;
 		}
-	}
-	last = new;*/
+	}*/
+	last = new;
 	return new;
 }
 
