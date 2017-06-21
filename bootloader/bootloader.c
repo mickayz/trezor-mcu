@@ -140,7 +140,7 @@ void __attribute__((noreturn)) __stack_chk_fail(void)
 int main(void)
 {
 	__stack_chk_guard = random32();
-	//setup();
+	setup();
 	memory_protect();
 	oledInit();
 

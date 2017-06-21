@@ -40,8 +40,8 @@ void setup(void)
 	rcc_periph_clock_enable(RCC_OTGFS);
 
 	// enable RNG
-	rcc_periph_clock_enable(RCC_RNG);
-	RNG_CR |= RNG_CR_IE | RNG_CR_RNGEN;
+	//rcc_periph_clock_enable(RCC_RNG);
+	//RNG_CR |= RNG_CR_IE | RNG_CR_RNGEN;
 
 	// set GPIO for buttons
 	gpio_mode_setup(GPIOC, GPIO_MODE_INPUT, GPIO_PUPD_PULLUP, GPIO2 | GPIO5);
