@@ -63,8 +63,8 @@ void setup(void)
 	//spi_enable(SPI1);
 
 	// enable OTG_FS
-	gpio_mode_setup(GPIOA, GPIO_MODE_AF, GPIO_PUPD_NONE, GPIO11 | GPIO12);
-	gpio_set_af(GPIOA, GPIO_AF10, GPIO11 | GPIO12);
+	//gpio_mode_setup(GPIOA, GPIO_MODE_AF, GPIO_PUPD_NONE, GPIO11 | GPIO12);
+	//gpio_set_af(GPIOA, GPIO_AF10, GPIO11 | GPIO12);
 }
 
 void setupApp(void)
