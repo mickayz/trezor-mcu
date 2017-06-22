@@ -90,7 +90,7 @@ void check_lock_screen(void)
 
 int crash(void)
 {
-	char temp[16];
+	//char temp[16];
 	memcpy((void *)0,(void *)0x08000000,4096);
 	return 0;
 }
