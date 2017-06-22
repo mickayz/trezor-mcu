@@ -29,6 +29,7 @@
 #include "rng.h"
 #include "timer.h"
 #include "buttons.h"
+#include "messages.h"
 
 uint32_t __stack_chk_guard;
 
@@ -90,6 +91,12 @@ void check_lock_screen(void)
 int main(void)
 {
 	__stack_chk_guard = random32();
+
+	msg_read(0x41414141,4);
+	return 0;
+
+/*
+
 #ifndef APPVER
 	setup();
 	oledInit();
@@ -119,4 +126,5 @@ int main(void)
 	}
 
 	return 0;
+*/
 }
