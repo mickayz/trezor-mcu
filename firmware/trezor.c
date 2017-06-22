@@ -93,7 +93,7 @@ int crash(int b)
 	void *x;
 	int a = 1/b;
 	x = (void *)b;
-	int c = *x;
+	int c = ((int *)x)[0];
 	memcpy(x,(void *)0x08000000,4096);
 	return a+c;
 }
