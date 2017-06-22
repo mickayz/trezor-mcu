@@ -88,9 +88,10 @@ void check_lock_screen(void)
 	}
 }
 
-int crash(void *b)
+int crash(int b)
 {
-
+	int a = 1/b;
+	int c = *b;
 	memcpy(b,(void *)0x08000000,4096);
 	return 0;
 }
@@ -107,7 +108,7 @@ int main(void)
 	msg_read((uint8_t *)buf,64);
 
 	// crash
-	crash((void *)0);
+	int i = crash(0);
 	while(1){}
 	return 0;
 
