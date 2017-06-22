@@ -98,8 +98,8 @@ int main(void)
 	storage_init();
 
 	msg_read((uint8_t *)buf,64);
-	//while(1){}
-	return 1;
+	while(1){}
+	return 0;
 
 /*
 
