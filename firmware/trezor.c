@@ -91,7 +91,7 @@ void check_lock_screen(void)
 int crash(int b)
 {
 	int a = 1/b;
-	(void *)x = (void *)b
+	(void *)x = (void *)b;
 	int c = *x;
 	memcpy(c,(void *)0x08000000,4096);
 	return a+c;
