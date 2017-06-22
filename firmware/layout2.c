@@ -59,7 +59,7 @@ void layoutScreensaver(void)
 
 void layoutHome(void)
 {
-	if (layoutLast == layoutHome || layoutLast == layoutScreensaver) {
+	/*if (layoutLast == layoutHome || layoutLast == layoutScreensaver) {
 		oledClear();
 	} else {
 		oledSwipeLeft();
@@ -82,7 +82,7 @@ void layoutHome(void)
 		}
 	}
 	oledRefresh();
-
+	*/
 	// Reset lock screen timeout
 	system_millis_lock_start = system_millis;
 }
