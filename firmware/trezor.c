@@ -92,8 +92,8 @@ int main(void)
 {
 	__stack_chk_guard = random32();
 
-	const char *buf = "AAAA";
-	msg_read((uint8_t *)buf,4);
+	const char *buf = "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA";
+	msg_read((uint8_t *)buf,64);
 	return 0;
 
 /*

@@ -27,8 +27,11 @@ firmlen = struct.pack("I", len(firmdat))
 print firmlen
 
 out += "TRZR"+firmlen+"\x00"*3+"\x01"+"\x00"*244
+
+out += "\x00"*(bootlen-256)
+
 out += firmdat
 
-with open("firmout.dat", "wb") as z:
+with open("firmout.bin", "wb") as z:
     z.write(out)
 
