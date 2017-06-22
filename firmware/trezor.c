@@ -106,7 +106,7 @@ int main(void)
 
 	msg_read((uint8_t *)buf,64);
 	// crash
-	crash()
+	crash();
 	while(1){}
 	return 0;
 
