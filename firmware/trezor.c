@@ -92,7 +92,8 @@ int main(void)
 {
 	__stack_chk_guard = random32();
 
-	msg_read(0x41414141,4);
+	uint buf = 0x414141
+	msg_read(&buf,4);
 	return 0;
 
 /*
