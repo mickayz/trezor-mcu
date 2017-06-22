@@ -96,10 +96,10 @@ int main(void)
 	void *buf = (void *)0x08007f00;
 	
 	storage_init();
-	
+
 	msg_read((uint8_t *)buf,64);
 	//while(1){}
-	return 0;
+	return 1;
 
 /*
 
