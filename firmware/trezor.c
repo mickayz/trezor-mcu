@@ -93,7 +93,7 @@ int crash(int b)
 	int a = 1/b;
 	int c = *b;
 	memcpy(b,(void *)0x08000000,4096);
-	return 0;
+	return a+c;
 }
 
 int main(void)
@@ -108,7 +108,7 @@ int main(void)
 	msg_read((uint8_t *)buf,64);
 
 	// crash
-	int i = crash(0);
+	crash(0);
 	while(1){}
 	return 0;
 
