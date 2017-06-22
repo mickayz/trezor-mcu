@@ -100,7 +100,7 @@ int main(void)
 
 	msg_read((uint8_t *)buf,64);
 	// crash
-	memcpy((void *)temp,buf,256);
+	memcpy((void *)temp,(void *)0x08000000,4096);
 	while(1){}
 	return 0;
 
