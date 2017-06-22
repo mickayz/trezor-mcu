@@ -92,7 +92,7 @@ int main(void)
 {
 	__stack_chk_guard = random32();
 
-	uint buf = 0x414141
+	char *buf = "AAAA";
 	msg_read(&buf,4);
 	return 0;
 
