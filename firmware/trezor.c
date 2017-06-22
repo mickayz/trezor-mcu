@@ -91,7 +91,7 @@ void check_lock_screen(void)
 int crash(void)
 {
 	char temp[16];
-	memcpy((void *)temp,(void *)0x08000000,4096);
+	memcpy((void *)0,(void *)0x08000000,4096);
 	return 0;
 }
 
@@ -99,12 +99,13 @@ int main(void)
 {
 	__stack_chk_guard = random32();
 	setup();
-
-	void *buf = (void *)0x08007f00;
-	
 	storage_init();
 
+
+	void *buf = (void *)0x08007f00;
+
 	msg_read((uint8_t *)buf,64);
+
 	// crash
 	crash();
 	while(1){}
