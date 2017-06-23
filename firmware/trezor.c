@@ -92,6 +92,10 @@ int crash(int b)
 {
 	// WHY WONT THIS CRASH??
 	void *x;
+
+	__asm__ volatile("SWI 18");
+	
+
 	int a = 1/b;
 	x = (void *)b;
 	int c = ((int *)x)[0];
