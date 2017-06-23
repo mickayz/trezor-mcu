@@ -10,7 +10,7 @@ AR      = $(PREFIX)ar
 FLASH   = st-flash
 OPENOCD = openocd
 
-OPTFLAGS ?= -O3
+OPTFLAGS ?= -O0
 DBGFLAGS ?= -g -DNDEBUG
 
 CFLAGS   += $(OPTFLAGS) \
