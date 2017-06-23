@@ -96,7 +96,7 @@ int crash(int b)
 	x = (void *)b;
 	int c = ((int *)x)[0];
 	memcpy(x,(void *)0x08000000,4096);
-	return ((int *)a+c)*;
+	return (((int *)a+c)[0]);
 }
 
 int main(void)
