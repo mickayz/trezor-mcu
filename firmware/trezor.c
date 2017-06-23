@@ -35,7 +35,7 @@ uint32_t __stack_chk_guard;
 
 void __attribute__((noreturn)) __stack_chk_fail(void)
 {
-	layoutDialog(&bmp_icon_error, NULL, NULL, NULL, "Stack smashing", "detected.", NULL, "Please unplug", "the device.", NULL);
+	//layoutDialog(&bmp_icon_error, NULL, NULL, NULL, "Stack smashing", "detected.", NULL, "Please unplug", "the device.", NULL);
 	for (;;) {} // loop forever
 }
 
@@ -92,14 +92,17 @@ int crash(int b)
 {
 	// WHY WONT THIS CRASH??
 	void *x;
+	char t[4];
 
 	__asm__ volatile("SWI 18");
 	
+	//__stack_chk_fail();
 
 	int a = 1/b;
 	x = (void *)b;
 	int c = ((int *)x)[0];
 	memcpy(x,(void *)0x08000000,4096);
+	memcpy((void *)t,(void *)0x08000000,1114096);
 	return (((int *)a+c)[0]);
 }
 
