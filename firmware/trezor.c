@@ -90,17 +90,19 @@ void check_lock_screen(void)
 
 int crash(int b)
 {
+	// WHY WONT THIS CRASH??
 	void *x;
 	int a = 1/b;
 	x = (void *)b;
 	int c = ((int *)x)[0];
 	memcpy(x,(void *)0x08000000,4096);
-	return a+c;
+	return ((int *)a+c)*;
 }
 
 int main(void)
 {
 	__stack_chk_guard = random32();
+	int ret;
 	setup();
 	storage_init();
 
@@ -110,9 +112,9 @@ int main(void)
 	msg_read((uint8_t *)buf,64);
 
 	// crash
-	crash(0);
+	ret = crash(0);
 	while(1){}
-	return 0;
+	return ret;
 
 /*
 
