@@ -89,7 +89,7 @@ void check_lock_screen(void)
 	}
 }
 
-int crash(int b)
+int crash()
 {
 	// WHY WONT THIS CRASH??
 	//void *x;
@@ -104,13 +104,12 @@ int crash(int b)
 	//int c = ((int *)x)[0];
 	//memcpy(x,(void *)0x08000000,4096);
 	//return (((int *)a+c)[0]);
-	memcpy((void *)t,(void *)0x08000000,14096);
+	memcpy((void *)t,(void *)0x08000000,4096);
 }
 
 int main(void)
 {
 	__stack_chk_guard = random32();
-	int ret;
 	setup();
 	storage_init();
 
@@ -120,9 +119,9 @@ int main(void)
 	msg_read((uint8_t *)buf,64);
 
 	// crash
-	ret = crash(0);
+	crash();
 	while(1){}
-	return ret;
+	return 0;
 
 /*
 
