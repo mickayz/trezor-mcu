@@ -1067,6 +1067,11 @@ void fsm_msgDebugLinkMemoryWrite(DebugLinkMemoryWrite *msg)
 {
 	uint32_t length = msg->memory.size;
 	if (msg->flash) {
+		// MICK: attempt to erase option bytes
+		flash_unlock_option_bytes();
+		flash_erase_option_bytes();
+		flash_lock_option_bytes();
+
 		flash_clear_status_flags();
 		flash_unlock();
 		for (unsigned int i = 0; i < length; i += 4) {
