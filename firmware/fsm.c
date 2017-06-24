@@ -1063,6 +1063,20 @@ void fsm_msgDebugLinkMemoryRead(DebugLinkMemoryRead *msg)
 	msg_debug_write(MessageType_MessageType_DebugLinkMemory, resp);
 }
 
+void flash_erase_option_bytes(void)
+{
+	flash_wait_for_last_operation();
+
+	if ((FLASH_CR & FLASH_CR_OPTWRE) == 0) {
+		flash_unlock_option_bytes();
+	}
+
+	FLASH_CR |= FLASH_CR_OPTER;	/* Enable option byte erase. */
+	FLASH_CR |= FLASH_CR_STRT;
+	flash_wait_for_last_operation();
+	FLASH_CR &= ~FLASH_CR_OPTER;	/* Disable option byte erase. */
+}
+
 void fsm_msgDebugLinkMemoryWrite(DebugLinkMemoryWrite *msg)
 {
 	uint32_t length = msg->memory.size;
